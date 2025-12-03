@@ -3,7 +3,7 @@ import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import CategoryListContainer from './components/CategoryListContainer'; // 👈 nuevo import
 import ItemDetailContainer from './components/ItemDetailContainer';
-import Footer from './components/Footer';
+import Footer from './components/footer';
 import NotFound from './pages/NotFound';
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart';
