@@ -1,16 +1,34 @@
-# React + Vite
+# 🛒 E-commerce React + Vite + Firebase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Descripción
+Single Page Application de e-commerce desarrollada con **React** y **Vite**, utilizando **Firebase Firestore** como base de datos.  
+Permite listar productos, ver detalle, agregar al carrito, y finalizar la compra generando una orden en Firestore.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías
+- React + Vite
+- React Router DOM
+- Context API
+- Firebase / Firestore
+- Bootstrap (para estilos)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Funcionalidades
+- Listado dinámico de productos desde Firestore
+- Filtro por categorías
+- Vista en detalle de producto
+- Carrito global con Context (agregar, eliminar, vaciar, totales)
+- Checkout con registro de orden e ID de confirmación
+- Renderizado condicional (loaders, mensajes, sin stock, carrito vacío)
 
-## React Compiler
+## 📂 Estructura de componentes
+- `App.jsx`
+- `NavBar` + `CartWidget`
+- `ItemListContainer` → `ItemList` → `Item`
+- `ItemDetailContainer` → `ItemDetail` → `ItemCount`
+- `Cart` → `CartItem`
+- `CheckoutForm`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔐 Configuración
+1. Clonar el repo y ejecutar:
+   ```bash
+   npm install
+   npm run dev

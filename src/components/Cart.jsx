@@ -1,5 +1,6 @@
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
+import CartItem from './CartItem';
 
 const Cart = () => {
   const { cart, removeItem, clearCart, getTotalPrice } = useCart();
@@ -19,19 +20,7 @@ const Cart = () => {
       <h3 className="mb-4">Tu carrito</h3>
       <ul className="list-group mb-3">
         {cart.map((p) => (
-          <li key={p.id} className="list-group-item d-flex justify-content-between align-items-center">
-            <div className="d-flex align-items-center gap-3">
-              <img src={p.img} alt={p.title} width="64" height="64" className="rounded" />
-              <div>
-                <strong>{p.title}</strong>
-                <div className="text-muted">Cant: {p.quantity} • Precio: ${p.price}</div>
-              </div>
-            </div>
-            <div className="d-flex align-items-center gap-3">
-              <span className="fw-bold">${p.price * p.quantity}</span>
-              <button className="btn btn-sm btn-outline-danger" onClick={() => removeItem(p.id)}>Eliminar</button>
-            </div>
-          </li>
+          <CartItem key={p.id} item={p} onRemove={removeItem} />
         ))}
       </ul>
       <div className="d-flex justify-content-between align-items-center">
@@ -46,3 +35,4 @@ const Cart = () => {
 };
 
 export default Cart;
+

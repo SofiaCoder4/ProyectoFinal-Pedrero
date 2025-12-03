@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
+import CategoryListContainer from './components/CategoryListContainer'; // 👈 nuevo import
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Footer from './components/Footer';
 import NotFound from './pages/NotFound';
@@ -16,12 +17,26 @@ function App() {
           <NavBar />
           <div className="flex-grow-1">
             <Routes>
-              <Route path="/" element={<ItemListContainer greeting="¡Bienvenid@ a nuestra tienda!" />} />
-              <Route path="/category/:categoryId" element={<ItemListContainer />} />
+              {/* Home muestra todos los productos */}
+              <Route
+                path="/"
+                element={<ItemListContainer greeting="¡Bienvenid@ a nuestra tienda!" />}
+              />
+
+              {/* Categorías muestran filtrados */}
+              <Route path="/category/:categoryId" element={<CategoryListContainer />} />
+
+              {/* Detalle de producto */}
               <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-              <Route path="*" element={<NotFound />} />
+
+              {/* Carrito */}
               <Route path="/cart" element={<Cart />} />
+
+              {/* Checkout */}
               <Route path="/checkout" element={<CheckoutForm />} />
+
+              {/* Página no encontrada */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
           <Footer />

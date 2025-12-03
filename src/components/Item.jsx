@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const Item = ({ id, title, price, img, category }) => {
-  // Si no hay imagen, usamos un ícono según la categoría
+  // Si no hay imagen, usa un ícono según la categoría
   const getIcon = () => {
     switch (category) {
       case 'ropa':
